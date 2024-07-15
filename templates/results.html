@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mention Tracker - Search Results</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Results for {{ person_name }}</h1>
+    </header>
+    <div class="container">
+        <h2>Mentions:</h2>
+        <ul>
+            {% for mention in mentions %}
+                <li>{{ mention }}</li>
+            {% endfor %}
+        </ul>
+        <h2>Themes:</h2>
+        <ul>
+            {% for theme in themes %}
+                <li>{{ theme }}</li>
+            {% endfor %}
+        </ul>
+        <a href="/">New Search</a>
+    </div>
+</body>
+</html>
